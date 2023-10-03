@@ -25,6 +25,12 @@ export default function Textform(props) {
         setText(event.target.value)
     } 
 
+    const handleColor = ()=>{
+        // console.log("UpperCase was clicked", text);
+        let newColor = text.getElementById("mybox");
+        setText(newColor)
+    }
+
     const [text, setText] = useState("")
     // text = "new text"    //wrong way to update the text
     // setText("new Text")  // correct way to update the text
@@ -38,6 +44,7 @@ export default function Textform(props) {
             <button className="btn btn-primary" onClick={handleUpClick}>Convert to UPPERCASE</button>
             <button className="btn btn-primary mx-3" onClick={handleLoClick}>Convert to lowercase</button>
             <button className="btn btn-primary mx-0" onClick={handleCopy}>Copy Text</button>
+            <button className="btn btn-primary mx-0" onClick={handleColor}>Change Color</button>
         </div>
 
         <div className="container" style={{Color: props.mode==='dark'?'white':'black'}}>
